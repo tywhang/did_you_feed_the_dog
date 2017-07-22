@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    fontSize: 32,
+    fontSize: 28,
     marginBottom: 60
   },
   dayOfWeek: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   rowContainer: {
-    width: '50%'
+    width: '60%'
   },
   row: {
     flexDirection: 'row',
