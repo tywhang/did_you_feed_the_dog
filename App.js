@@ -44,7 +44,6 @@ export default class App extends React.Component {
     return (
       <View key={dayOfWeek + meridian} style={styles.switchContainer}>
         <Switch
-          style={ styles.switch }
           onValueChange={ (value) => this.updateSwitch(value, dayOfWeek, meridian) }
           value={ this.state.values[dayOfWeek][meridian] } />
       </View>
@@ -55,8 +54,12 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.header}>DID YOU FEED THE DOG?</Text>
-
         <View style={styles.rowContainer}>
+          <View style={styles.row}>
+            <Text style={styles.dayOfWeek} />
+            <Text style={styles.meridianHeader}>AM</Text>
+            <Text style={styles.meridianHeader}>PM</Text>
+          </View>
           {daysOfWeek.map((day) => { return this.renderDayRow(day) })}
         </View>
         <Button onPress={this.resetSwitches.bind(this)} style={styles.resetButton} title="Reset" />
@@ -84,6 +87,11 @@ const styles = StyleSheet.create({
   switchContainer: {
     flex: 1,
     alignItems: 'center'
+  },
+  meridianHeader: {
+    flex: 1,
+    fontSize: 20,
+    textAlign: 'center'
   },
   resetButton: {
     marginTop: 20
